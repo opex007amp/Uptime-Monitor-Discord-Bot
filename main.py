@@ -4,7 +4,7 @@ from discord_webhook import DiscordWebhook
 import requests
 from pymongo import MongoClient
 import os
-
+from keep_alive import keep_alive
 # Load environmental variables
 BOT_TOKEN = os.getenv('TOKEN')  # Replace with your Discord bot token
 MONGODB_URI = os.getenv('MONGODB')  # Replace with your MongoDB connection URI
@@ -28,6 +28,7 @@ bot = commands.Bot(command_prefix=prefix, intents=intents)
 user_monitors = {}
 
 bot.remove_command('help')
+keep_alive()
 
 # Set up embed colors
 EMBED_COLOR_SUCCESS = int(os.getenv('SUCCESS_COLOR', '0x00ff00'), 16)
