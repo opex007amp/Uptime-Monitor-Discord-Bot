@@ -30,8 +30,8 @@ user_monitors = {}
 bot.remove_command('help')
 
 # Set up embed colors
-EMBED_COLOR_SUCCESS = int(os.getenv('EMBED_COLOR_SUCCESS', '0x00ff00'), 16)
-EMBED_COLOR_ERROR = int(os.getenv('EMBED_COLOR_ERROR', '0xff0000'), 16)
+EMBED_COLOR_SUCCESS = int(os.getenv('SUCCESS_COLOR', '0x00ff00'), 16)
+EMBED_COLOR_ERROR = int(os.getenv('ERROR_COLOR', '0xff0000'), 16)
 
 def log_to_webhook(embed):
     webhook = DiscordWebhook(url=DISCORD_WEBHOOK_URL, embeds=[embed.to_dict()])
